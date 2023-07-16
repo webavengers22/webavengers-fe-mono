@@ -1,20 +1,25 @@
 {
   "name": "ui",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
   "license": "MIT",
+  "dependencies": {
+    "eslint-config-custom": "*",
+    "tailwind-config": "*",
+    "tsconfig": "*"
+  },
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "generate:component": "turbo gen react-component"
   },
-  "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "react": "^17.0.2",
-    "tsconfig": "*",
-    "typescript": "^4.5.2"
+  "peerDependencies": {
+    "@types/react": "^18.2.15",
+    "react": "^18.2.0"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
   }
 }
