@@ -3,23 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "next": "^13.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "icons": "*",
+    "tailwind-config": "*",
+    "tsconfig": "*",
     "ui": "*"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.0-rc.2",
+    "@storybook/addon-interactions": "^7.1.0-rc.2",
+    "@storybook/addon-links": "^7.1.0-rc.2",
+    "@storybook/addon-onboarding": "^1.0.7",
+    "@storybook/blocks": "^7.1.0-rc.2",
+    "@storybook/nextjs": "^7.1.0-rc.2",
+    "@storybook/react": "^7.1.0-rc.2",
+    "@storybook/testing-library": "^0.2.0",
     "@types/node": "^17.0.12",
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "storybook": "^7.1.0-rc.2",
     "typescript": "^4.5.3"
   }
 }
