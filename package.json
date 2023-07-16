@@ -6,12 +6,31 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "dependencies": {
+    "eslint-config-custom": "*"
+  },
   "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/plugin-syntax-typescript": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@hookform/resolvers": "^3.1.1",
     "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "prettier": "^2.5.1",
-    "turbo": "latest"
+    "@types/resize-observer-browser": "^0.1.7",
+    "@types/styled-components": "^5.1.26",
+    "babel-loader": "^9.1.3",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.1.4",
+    "clsx": "^2.0.0",
+    "dayjs": "^1.11.9",
+    "framer-motion": "^10.12.21",
+    "lodash": "^4.17.21",
+    "prettier": "^3.0.0",
+    "react-hook-form": "^7.45.1",
+    "react-to-print": "^2.14.13",
+    "styled-components": "^6.0.4",
+    "turbo": "latest",
+    "twin.macro": "^3.3.1"
   },
   "name": "webavengers-fe-mono",
   "packageManager": "yarn@1.22.19",
