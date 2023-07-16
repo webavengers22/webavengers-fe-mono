@@ -1,14 +1,25 @@
 {
+  "name": "webavengers-fe-mono",
+  "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/config/*"
+  ],
   "scripts": {
+    "ci": "yarn install --frozen-lockfile",
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "preview": "turbo run preview",
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
-    "eslint-config-custom": "*",
-    "@types/webavengers-fe-mono": "*"
+    "@types/webavengers-fe-mono": "*",
+    "eslint-config-custom": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -33,11 +44,5 @@
     "turbo": "latest",
     "twin.macro": "^3.3.1"
   },
-  "name": "webavengers-fe-mono",
-  "packageManager": "yarn@1.22.19",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "packages/config/*"
-  ]
+  "packageManager": "yarn@1.22.19"
 }
