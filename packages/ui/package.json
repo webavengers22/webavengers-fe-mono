@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "eslint-config-custom": "*",
+    "icons": "*",
     "tailwind-config": "*",
     "tsconfig": "*"
   },
