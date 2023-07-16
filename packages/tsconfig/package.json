@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "react-app.json",
+    "react-library.json"
+  ],
+  "devDependencies": {
+    "typescript": "^5.1.6"
   }
 }

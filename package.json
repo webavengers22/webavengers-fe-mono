@@ -7,7 +7,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
-    "eslint-config-custom": "*"
+    "eslint-config-custom": "*",
+    "@types/webavengers-fe-mono": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
