@@ -1,8 +1,10 @@
 {
   "name": "tailwind-config",
   "version": "0.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "private": true,
+  "files": [
+    "tailwind.config.js"
+  ],
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.26",
