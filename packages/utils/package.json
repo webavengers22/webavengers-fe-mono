@@ -1,0 +1,16 @@
+{
+  "name": "utils",
+  "version": "0.0.0",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-custom": "*",
+    "tsconfig": "*"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "@types/react": "^18.2.15",
+    "react": "^18.2.0"
+  }
+}
