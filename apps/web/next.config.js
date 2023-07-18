@@ -1,4 +1,12 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["ui"],
+  transpilePackages: [],
+  output: 'standalone',
+  i18n: {
+    locales: ['ko'],
+    defaultLocale: 'ko',
+  },
 };
+
+module.exports = nextConfig;
