@@ -22,5 +22,8 @@
     "twin": {
       "preset": "styled-components"
     }
+  },
+  "devDependencies": {
+    "@floating-ui/react": "^0.24.8"
   }
 }
