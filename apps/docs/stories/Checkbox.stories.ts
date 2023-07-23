@@ -1,17 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from 'ui';
+
+import { Checkbox } from 'ui';
+
 const meta = {
-  title: 'component/Button',
-  component: Button,
+  title: 'component/Checkbox',
+  component: Checkbox,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Checkbox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { children: 'test' },
+  args: { label: 'test' },
 };
