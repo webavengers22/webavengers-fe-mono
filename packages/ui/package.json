@@ -1,7 +1,7 @@
 {
   "name": "ui",
   "version": "0.0.0",
-  "main": "./src/index.tsx",
+  "main": "index.tsx",
   "types": "./src/index.tsx",
   "license": "MIT",
   "dependencies": {
@@ -10,9 +10,8 @@
     "tailwind-config": "*",
     "tsconfig": "*"
   },
-  "scripts": {
-    "lint": "eslint \"**/*.ts*\"",
-    "generate:component": "turbo gen react-component"
+  "devDependencies": {
+    "@floating-ui/react": "^0.24.8"
   },
   "peerDependencies": {
     "@types/react": "^18.2.15",
@@ -22,8 +21,5 @@
     "twin": {
       "preset": "styled-components"
     }
-  },
-  "devDependencies": {
-    "@floating-ui/react": "^0.24.8"
   }
 }
