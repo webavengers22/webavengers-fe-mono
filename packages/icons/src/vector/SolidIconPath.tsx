@@ -9,4 +9,10 @@ export const solidIconList = {
       />
     </>
   ),
+  Cancel: (
+    <>
+      <path d="M7 17L17 7" stroke="#1A1712" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7 7L17 17" stroke="#1A1712" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
 };
