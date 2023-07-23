@@ -1,20 +1,24 @@
 import 'twin.macro';
 
 import { useMergeRefs } from '@floating-ui/react';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 import { InputHTMLAttributes, forwardRef, useEffect, useRef } from 'react';
 
+import { Icon } from 'icons';
+
 import { theme } from './theme';
-import Icon from 'icons/src/Icon';
+import { Color, Size } from './types';
 
 export interface CheckboxProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'placeholder'> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'placeholder' | 'size' | 'color'> {
   indeterminate?: boolean;
   label?: string;
+  size?: Size;
+  color?: Color;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ disabled = false, indeterminate, label, ...rest }, ref) => {
+  ({ disabled = false, indeterminate, color = 'primary', label, size = 'sm', ...rest }, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const combineRef = useMergeRefs([inputRef, ref]);
 
@@ -36,9 +40,17 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           disabled={disabled}
           {...rest}
         />
-        <div css={[theme.icon.base, theme.icon.indeteminate, theme.icon.hover]}>
+        <div
+          css={[
+            theme.icon.base,
+            theme.icon.sizes[size],
+            theme.icon.indeteminate[color],
+            theme.icon.colors[color],
+            //      theme.icon.hover,
+          ]}
+        >
           {indeterminate ? (
-            <div tw="w-[10px] h-[2px] rounded-[34px] bg-Shades-0" />
+            <div tw="w-[10px] h-[2px] rounded-[34px]" />
           ) : (
             <Icon name={'Check'} solid={true} />
           )}

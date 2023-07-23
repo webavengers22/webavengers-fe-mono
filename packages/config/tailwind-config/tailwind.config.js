@@ -8,6 +8,9 @@ module.exports = {
       lg: '1024px',
       xl: '1920px',
     },
+    boxShadow: {
+      0: '4px 4px 40px 0px rgba(0, 0, 0, 0.16)',
+    },
     colors: {
       inherit: 'inherit',
       transparent: 'transparent',
@@ -43,6 +46,7 @@ module.exports = {
         600: '#00796B',
         700: '#00695C',
       },
+
       white: '#ffffff',
       black: '#1A1712',
       success: '#109867',
