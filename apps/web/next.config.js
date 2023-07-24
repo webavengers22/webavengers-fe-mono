@@ -7,6 +7,15 @@ const nextConfig = {
     locales: ['ko'],
     defaultLocale: 'ko',
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
