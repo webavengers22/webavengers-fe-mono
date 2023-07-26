@@ -15,4 +15,13 @@ export const solidIconList = {
       <path d="M7 7L17 17" stroke="#1A1712" strokeWidth="1.5" strokeLinecap="round" />
     </>
   ),
+  Edit: (
+    <path
+      d="M6 12H18M12 18L12 6"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
 };
