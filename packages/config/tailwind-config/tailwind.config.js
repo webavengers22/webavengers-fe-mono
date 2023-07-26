@@ -11,6 +11,7 @@ module.exports = {
     boxShadow: {
       0: '4px 4px 40px 0px rgba(0, 0, 0, 0.16)',
     },
+
     colors: {
       inherit: 'inherit',
       transparent: 'transparent',
@@ -55,6 +56,9 @@ module.exports = {
       error: '#DC1B2C',
     },
     extend: {
+      height: {
+        header: '3.375rem',
+      },
       fontSize: {
         dp1: ['3rem', { lineHeight: '3.75rem', fontWeight: 700 }],
         dp2: ['2.5rem', { lineHeight: '3.375rem', fontWeight: 700 }],
