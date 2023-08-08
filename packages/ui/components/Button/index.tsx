@@ -1,13 +1,14 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 
 import { theme } from './theme';
-import { Color, Size, Variant } from './types';
+import { Color, Shape, Size, Variant } from './types';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   variant?: Variant;
   size?: Size;
   color?: Color;
+  shape?: Shape;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -18,6 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'filled',
       size = 'md',
       color = 'black',
+      shape = 'round',
       ...rest
     },
     ref,
@@ -32,6 +34,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           theme.variants[variant].colors[color],
           theme.sizes[size],
           fullWidth && theme.fullWidth,
+          shape && theme.shape[shape],
         ]}
         {...rest}
       />

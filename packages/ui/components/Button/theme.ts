@@ -50,4 +50,8 @@ export const theme = {
       },
     },
   },
+  shape: {
+    round: tw`rounded-md`,
+    circle: tw`rounded-full`,
+  },
 };
