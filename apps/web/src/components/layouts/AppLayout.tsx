@@ -8,6 +8,7 @@ import { Header } from '@/components/layouts/Header';
 import useMenuStore from '@/store/useMenuStore';
 import useLayoutStore from '@/store/useLayoutStore';
 import MENU_LIST from '@/constants/menu.constants';
+import { ScrollArea } from 'ui';
 
 export interface AppLayoutProps {
   children?: ReactNode;
@@ -18,7 +19,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const setMenu = useMenuStore((state) => state.setMenu);
   const router = useRouter();
 
-  const [loading, setLoading] = useState(false);
+  const [_, setLoading] = useState(false);
 
   /**
    * 페이지 전환시 로딩 처리
@@ -64,7 +65,20 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   return (
     <Page>
       <Header />
-      <main css={[tw`bg-Gray-100 pt-[3.375rem]`]}>{children}</main>
+      <div
+        css={[
+          tw`relative w-full`,
+          tw`flex-grow`,
+          tw`grid grid-cols-12`,
+          tw`xl:max-w-[120rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem]`,
+        ]}
+      >
+        <main tw={'w-full'}>
+          <ScrollArea css={[tw`h-[calc(100vh - 80px - 88px)]`, tw`pt-[3.375rem]`]}>
+            {children}
+          </ScrollArea>
+        </main>
+      </div>
     </Page>
   );
 };
