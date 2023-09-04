@@ -1,3 +1,9 @@
 export default function HomePage() {
-  return <div>Home</div>;
+  return (
+    <article>
+      <section>
+        <p>동행별</p>
+      </section>
+    </article>
+  );
 }

@@ -15,5 +15,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { children: 'test', title: 'test' },
+  args: {
+    title: '입력한 타이틀 노출 텍스트...',
+    date: '22.08.26 - 22.09.04',
+  },
 };

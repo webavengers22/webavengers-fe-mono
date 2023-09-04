@@ -47,9 +47,9 @@ module.exports = {
         600: '#00796B',
         700: '#00695C',
       },
-
       white: '#ffffff',
       black: '#1A1712',
+      'black-60': 'rgba(42, 42, 42, 0.60)',
       success: '#109867',
       info: '#127CB3',
       warning: '#DC1B2C',

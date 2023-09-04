@@ -25,7 +25,6 @@ export const Header: FC = () => {
   // menu list
   const menuItems = useMenuStore((state) => state.oneDepthMenu).filter((item) => item.menu);
 
-  console.log(menuItems);
   return (
     <header
       css={[
