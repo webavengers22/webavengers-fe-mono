@@ -24,8 +24,9 @@ export const theme = {
     base: [
       tw`transition-colors duration-200`,
       tw`flex items-center`,
-      tw`w-full h-8`,
-      tw`px-3`,
+      tw`w-full h-12`,
+      tw`p-3`,
+      tw`text-bd1-r`,
       // tw`text-bg-Gray-300 text-Neutral-800`,
       tw`cursor-pointer select-none`,
     ],
