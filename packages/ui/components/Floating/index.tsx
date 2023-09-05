@@ -23,14 +23,14 @@ import React, {
 
 export interface FloatingProps extends Omit<HTMLAttributes<HTMLDivElement>, 'placeholder'> {
   offset?: number;
-  content?: ReactNode;
+  contents?: ReactNode;
   placement?: Placement;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }
 
 export const Floating = forwardRef<HTMLDivElement, FloatingProps>(
-  ({ offset = 5, content, placement, open, onOpenChange, children, ...rest }, ref) => {
+  ({ offset = 5, contents, placement, open, onOpenChange, children, ...rest }, ref) => {
     const [internalOpen, setInternalOpen] = useState(false);
 
     const defaultOpen = open ?? internalOpen;
@@ -42,7 +42,7 @@ export const Floating = forwardRef<HTMLDivElement, FloatingProps>(
       onOpenChange: defaultOnOpenChange,
       whileElementsMounted: autoUpdate,
       middleware: [fuiOffset(offset), shift(), flip({ mainAxis: false })],
-    });
+    }) as any;
 
     const { getReferenceProps, getFloatingProps } = useInteractions([
       useClick(context, { enabled: true }),
@@ -91,7 +91,7 @@ export const Floating = forwardRef<HTMLDivElement, FloatingProps>(
                 },
               })}
             >
-              {content}
+              {contents}
             </div>
           )}
         </FloatingPortal>

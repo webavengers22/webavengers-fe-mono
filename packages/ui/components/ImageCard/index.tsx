@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 import { FC, HTMLAttributes, ReactNode, useRef } from 'react';
 
 import { theme } from './theme';
+import { Icon } from 'icons';
 
 export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   date?: string;
@@ -10,6 +11,8 @@ export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'>
   imageSrc?: string;
   tags?: string[];
   alt?: string;
+  useInfo?: string;
+  likes?: string | number;
 }
 
 export const ImageCard: FC<CardProps> = ({
@@ -19,6 +22,8 @@ export const ImageCard: FC<CardProps> = ({
   children,
   tags = [],
   alt = '이미지',
+  useInfo = '',
+  likes = '',
   ...rest
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,6 +43,14 @@ export const ImageCard: FC<CardProps> = ({
       <section css={[theme.content.base]}>
         <time css={[theme.content.time]}>{date}</time>
         <h3 css={[theme.content.title]}>{title}</h3>
+        <p css={[theme.content.info]}>
+          <span tw={'flex flex-row'}>
+            <Icon name={'User'} solid /> {useInfo}
+          </span>
+          <span tw={'flex flex-row'}>
+            <Icon name={'Heart'} solid /> {likes}
+          </span>
+        </p>
       </section>
     </div>
   );

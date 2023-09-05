@@ -8,8 +8,7 @@ export const theme = {
     }
 
     &::-webkit-scrollbar {
-      ${tw`w-[12px]`}
-      ${tw`h-[12px]`}
+      ${tw`w-12 h-12`}// Updated class names
     }
 
     &::-webkit-scrollbar-corner {
@@ -17,10 +16,8 @@ export const theme = {
     }
 
     &::-webkit-scrollbar-thumb {
-      ${tw`bg-Gray-100 bg-clip-padding bg-Primary-600`}
-
-      ${tw`border-[3px] border-solid border-transparent`}
-      ${tw`rounded-[22px]`}
+      ${tw`bg-opacity-50 bg-clip-padding bg-Primary-600`}
+      ${tw`border-2 border-solid border-transparent rounded-lg`} // Updated class names
     }
   `,
   hover: [

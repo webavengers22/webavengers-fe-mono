@@ -8,7 +8,7 @@ import { Floating } from '../Floating';
 import { ScrollArea } from '../ScrollArea';
 import { theme } from './theme';
 
-interface Option {
+export interface Option {
   value: string;
   label: string;
 }
@@ -65,7 +65,7 @@ export const Select: FC<SelectProps> = ({
     <Floating
       placement="bottom"
       offset={1}
-      content={renderOptions()}
+      contents={renderOptions()}
       open={isOpen}
       onOpenChange={setIsOpen}
     >
@@ -77,11 +77,7 @@ export const Select: FC<SelectProps> = ({
         aria-controls="options-list"
         aria-label="select-label"
         aria-autocomplete="none"
-        css={[
-          theme.label.base,
-          // theme.label.hover,
-          // isOpen && theme.label.
-        ]}
+        css={[theme.label.base, theme.label.hover, isOpen && theme.label.open]}
         style={{ width }}
       >
         <span>{selectedLabel || placeholder}</span>
