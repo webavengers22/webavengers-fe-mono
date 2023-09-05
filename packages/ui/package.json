@@ -11,7 +11,7 @@
     "tsconfig": "*"
   },
   "devDependencies": {
-    "@floating-ui/react": "^0.24.8"
+    "@floating-ui/react": "^0.21.1"
   },
   "peerDependencies": {
     "@types/react": "^18.2.15",

@@ -30,7 +30,7 @@ export const Header: FC = () => {
       css={[
         tw`xl:max-w-[120rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem]`,
         tw`w-full fixed flex items-center justify-between backdrop-blur-sm`,
-        tw`h-header`,
+        tw`h-header z-10`,
         tw`text-black`,
       ]}
     >
