@@ -12,7 +12,7 @@ const ImageList: FC<Props> = ({ data, title, options }) => {
   const [type, setType] = useState('1');
   return (
     <>
-      <article tw={'grid grid-cols-12'}>
+      <article tw={'grid grid-cols-12 gap-5'}>
         <section tw={'col-span-3 flex flex-col justify-between items-start'}>
           <div>
             <p tw={'text-Primary-500 text-tit-r pb-6'}>{title}</p>

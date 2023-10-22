@@ -41,7 +41,7 @@ const imageCardData: ImageCardData[] = [
 ];
 export default function HomePage() {
   return (
-    <div tw={'flex flex-col gap-6 bg-Gray-100'}>
+    <div tw={'flex flex-col gap-20 bg-Gray-100'}>
       <div css={[tw`h-[40rem] items-center flex flex-row`]}>
         <div>
           <h1 tw={'text-dp1'}>가이드 님, </h1>
