@@ -9,6 +9,7 @@ import useMenuStore from '@/store/useMenuStore';
 import useLayoutStore from '@/store/useLayoutStore';
 import MENU_LIST from '@/constants/menu.constants';
 import { ScrollArea } from 'ui';
+import { Footer } from '@/components/layouts/Footer';
 
 export interface AppLayoutProps {
   children?: ReactNode;
@@ -70,11 +71,12 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
           tw`relative w-full h-full`,
           tw`flex-grow`,
           tw`pt-[3.375rem]`,
-          tw`xl:max-w-[120rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem]`,
+          tw`xl:max-w-[64rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem]`,
         ]}
       >
         <main tw={'w-full h-full'}>{children}</main>
       </div>
+      <Footer />
     </Page>
   );
 };
