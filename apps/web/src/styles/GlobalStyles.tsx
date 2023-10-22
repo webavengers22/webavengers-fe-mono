@@ -1,4 +1,4 @@
-import { GlobalStyles as BaseStyles } from 'twin.macro';
+import tw, { GlobalStyles as BaseStyles } from 'twin.macro';
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -65,9 +65,10 @@ const CustomStyles = createGlobalStyle`
     font-display: swap;
     src: local('Pretendard Thin'), url('/assets/fonts/woff2/Pretendard-Thin.woff2') format('woff2'), url('/assets/fonts/woff/Pretendard-Thin.woff') format('woff');
   }
-
+  
   body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    ${tw`bg-Gray-200`} 
   }
 `;
 

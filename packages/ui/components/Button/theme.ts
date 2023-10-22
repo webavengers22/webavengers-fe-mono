@@ -12,6 +12,7 @@ export const theme = {
     md: [tw`h-10`, tw`px-4 py-1`, tw`text-sm text-bd2-r`],
     lg: [tw`h-[3.25rem]`, tw`px-4 py-1`, tw`text-base text-bd1-r`],
   },
+  circle: tw`rounded-[5rem]`,
   variants: {
     filled: {
       base: [tw`outline-none`, tw`text-white`, tw`disabled:!bg-Gray-300 disabled:text-Gray-600`],

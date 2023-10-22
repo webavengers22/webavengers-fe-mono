@@ -4,13 +4,14 @@ module.exports = {
   theme: {
     screens: {
       sm: '320px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1920px',
+      md: '426px',
+      lg: '769px',
+      xl: '1025px',
     },
     boxShadow: {
       0: '4px 4px 40px 0px rgba(0, 0, 0, 0.16)',
     },
+
     colors: {
       inherit: 'inherit',
       transparent: 'transparent',
@@ -46,15 +47,18 @@ module.exports = {
         600: '#00796B',
         700: '#00695C',
       },
-
       white: '#ffffff',
       black: '#1A1712',
+      'black-60': 'rgba(42, 42, 42, 0.60)',
       success: '#109867',
       info: '#127CB3',
       warning: '#DC1B2C',
       error: '#DC1B2C',
     },
     extend: {
+      height: {
+        header: '3.375rem',
+      },
       fontSize: {
         dp1: ['3rem', { lineHeight: '3.75rem', fontWeight: 700 }],
         dp2: ['2.5rem', { lineHeight: '3.375rem', fontWeight: 700 }],

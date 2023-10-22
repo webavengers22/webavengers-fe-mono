@@ -7,7 +7,7 @@ import { SWRConfig } from 'swr';
 import { Alert } from 'ui';
 import AppLayout from '@/components/layouts/AppLayout';
 import { ALERT_MESSAGE } from '@/constants/alert.constants';
-import { useAert } from '@/hooks/useAlert';
+import { useAlert } from '@/hooks/useAlert';
 import fetcher from '@/libs/utils/fetcher';
 import GlobalStyles from '@/styles/GlobalStyles';
 
@@ -17,7 +17,7 @@ dayjs.extend(timezone);
 dayjs.tz.setDefault('Asia/Seoul');
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { isOpen, onOpen, onClose, message, setMessage } = useAert();
+  const { isOpen, onOpen, onClose, message, setMessage } = useAlert();
 
   return (
     <SWRConfig

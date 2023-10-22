@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export const useAert = () => {
+export const useAlert = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const onOpen = useCallback(() => setIsOpen(true), []);

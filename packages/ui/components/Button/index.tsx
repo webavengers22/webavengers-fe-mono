@@ -8,6 +8,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
   color?: Color;
+  circle?: boolean;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -18,6 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'filled',
       size = 'md',
       color = 'black',
+      circle = false,
       ...rest
     },
     ref,
@@ -31,6 +33,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           theme.variants[variant].base,
           theme.variants[variant].colors[color],
           theme.sizes[size],
+          circle && theme.circle,
           fullWidth && theme.fullWidth,
         ]}
         {...rest}
