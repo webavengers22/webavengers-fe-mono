@@ -42,7 +42,7 @@ const imageCardData: ImageCardData[] = [
 export default function HomePage() {
   return (
     <div tw={'flex flex-col gap-6 bg-Gray-100'}>
-      <div css={[tw`h-[40rem] flex flex-row`]}>
+      <div css={[tw`h-[40rem] items-center flex flex-row`]}>
         <div>
           <h1 tw={'text-dp1'}>가이드 님, </h1>
           <h1 tw={'text-dp1'}>여행을 계획하시나요?</h1>
