@@ -1,4 +1,4 @@
-import { GlobalStyles as BaseStyles } from 'twin.macro';
+import tw, { GlobalStyles as BaseStyles } from 'twin.macro';
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -68,6 +68,7 @@ const CustomStyles = createGlobalStyle`
   
   body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    ${tw`bg-Gray-200`} 
   }
 `;
 

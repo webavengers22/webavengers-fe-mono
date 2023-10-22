@@ -29,53 +29,58 @@ export const Header: FC = () => {
     <header
       css={[
         tw`xl:max-w-[64rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem]`,
-        tw`w-full fixed flex items-center justify-between backdrop-blur-sm`,
-        tw`h-header z-10`,
+        tw`w-full fixed h-header z-10`,
         tw`text-black`,
       ]}
     >
-      {/*메뉴*/}
-      <nav css={[tw`h-full `]}>
-        <ul tw="flex flex-row" style={{ overflowY: 'overlay' as any }}>
-          {menuItems?.map(({ id, href, title }) => {
-            const isActive = router.asPath.startsWith(id);
-            return (
-              <li key={id} css={[tw`pr-8`]}>
-                <Link
-                  href={href}
-                  css={[
-                    tw`relative`,
-                    tw`flex items-center`,
-                    tw`select-none p-[0.625rem] `,
-                    tw`text-bd1-r`,
-                  ]}
-                >
-                  <span
+      <div css={[tw`flex items-center justify-between backdrop-blur-sm`]}>
+        {/*메뉴*/}
+        <nav css={[tw`h-full`]}>
+          <ul tw="flex flex-row" style={{ overflowY: 'overlay' as any }}>
+            {menuItems?.map(({ id, href, title }) => {
+              const isActive = router.asPath.startsWith(id);
+              return (
+                <li key={id} css={[tw`pr-8`]}>
+                  <Link
+                    href={href}
                     css={[
-                      isActive &&
-                        tw`after:(content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 )`,
+                      tw`relative`,
+                      tw`flex items-center`,
+                      tw`select-none p-[0.625rem] `,
+                      tw`text-bd1-r`,
                     ]}
                   >
-                    {title}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <span css={[tw`w-[6rem]`]}>
-        <LogoRectIcon color={'black'} css={[tw`w-full h-full`]} />
-      </span>
-      <div css={[tw`flex flex-row items-center gap-4`]}>
-        <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-0`]}>로그인</Button>
-        <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-0`]}>회원가입</Button>
-        <Button circle color={'primary'} css={[tw`flex flex-row items-center`]}>
-          <Icon name={'Edit'} solid />
-          <Link href={'/travel/create/schedule'}>
-            <span>여행 가이드 추가</span>
-          </Link>
-        </Button>
+                    <span
+                      css={[
+                        isActive &&
+                          tw`after:(content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 )`,
+                      ]}
+                    >
+                      {title}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <span css={[tw`w-[6rem]`]}>
+          <LogoRectIcon color={'black'} css={[tw`w-full h-full`]} />
+        </span>
+        <div css={[tw`flex flex-row items-center gap-4`]}>
+          <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-0`]}>
+            <Link href={'/login'}>로그인</Link>
+          </Button>
+          <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-0`]}>
+            <Link href={'/register'}>회원가입</Link>
+          </Button>
+          <Button circle color={'primary'} css={[tw`flex flex-row items-center text-white`]}>
+            <Icon name={'Edit'} solid css={[tw`text-white`]} />
+            <Link href={'/travel/create/schedule'}>
+              <span>여행 가이드 추가</span>
+            </Link>
+          </Button>
+        </div>
       </div>
     </header>
   );

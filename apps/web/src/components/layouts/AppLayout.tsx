@@ -66,17 +66,17 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   return (
     <Page>
       <Header />
-      <div
-        css={[
-          tw`relative w-full h-full`,
-          tw`flex-grow`,
-          tw`pt-[3.375rem]`,
-          tw`xl:max-w-[64rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem]`,
-        ]}
-      >
-        <main tw={'w-full h-full'}>{children}</main>
-      </div>
-      <Footer />
+      <ScrollArea css={[tw`relative w-full h-full grid grid-cols-1 place-items-center`]}>
+        <section
+          css={[
+            tw`relative xl:max-w-[64rem] lg:max-w-[64rem] md:max-w-[48rem] sm:max-w-[48rem] h-full`,
+            tw`pb-[12.5rem] pt-[3.375rem]`,
+          ]}
+        >
+          <main css={[tw`relative h-full w-full`]}>{children}</main>
+        </section>
+        <Footer />
+      </ScrollArea>
     </Page>
   );
 };

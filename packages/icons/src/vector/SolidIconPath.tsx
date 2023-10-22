@@ -18,7 +18,13 @@ export const solidIconList = {
     </>
   ),
   Edit: (
-    <path d="M6 12H18M12 18L12 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M6 12H18M12 18L12 6"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      stroke="currentColor"
+    />
   ),
   ArrowDown: (
     <>

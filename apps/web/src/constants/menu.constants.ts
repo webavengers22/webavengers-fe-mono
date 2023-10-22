@@ -1,5 +1,3 @@
-import 'twin.macro';
-
 const MENU_LIST = [
   {
     id: '/home',
