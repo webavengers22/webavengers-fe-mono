@@ -1,3 +1,3 @@
 export default function CustomerServicePage() {
-  return <div>고객지원</div>;
+  return <section>고객지원</section>;
 }

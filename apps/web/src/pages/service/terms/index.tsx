@@ -1,3 +1,3 @@
 export default function TermsPage() {
-  return <div>이용약관</div>;
+  return <section>이용약관</section>;
 }

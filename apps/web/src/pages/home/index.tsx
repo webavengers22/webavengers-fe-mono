@@ -1,7 +1,4 @@
 import tw from 'twin.macro';
-import { IconButton, ImageCard, Select } from 'ui';
-import { useState } from 'react';
-import { Icon } from 'icons';
 import ImageList from '@/components/domains/home/ImageList';
 
 interface ImageCardData {
@@ -41,7 +38,7 @@ const imageCardData: ImageCardData[] = [
 ];
 export default function HomePage() {
   return (
-    <div tw={'flex flex-col gap-20 bg-Gray-100'}>
+    <section tw={'flex flex-col gap-20 bg-Gray-100'}>
       <div css={[tw`h-[40rem] items-center flex flex-row`]}>
         <div>
           <h1 tw={'text-dp1'}>가이드 님, </h1>
@@ -59,6 +56,6 @@ export default function HomePage() {
         data={imageCardData}
         options={[{ value: '1', label: '레저/스포츠' }]}
       />
-    </div>
+    </section>
   );
 }
