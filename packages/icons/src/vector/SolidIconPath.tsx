@@ -45,6 +45,28 @@ export const solidIconList = {
       />
     </>
   ),
+  CaretLeft: (
+    <>
+      <path
+        d="M15 19L8 12L15 5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </>
+  ),
+  CaretRight: (
+    <>
+      <path
+        d="M9 5L16 12L9 19"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </>
+  ),
   User: (
     <>
       <path
