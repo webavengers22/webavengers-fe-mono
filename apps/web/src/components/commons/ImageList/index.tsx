@@ -1,14 +1,14 @@
 import { FC, useState } from 'react';
 import tw from 'twin.macro';
 import { Icon } from 'icons';
-import { Select, IconButton, ImageCard } from 'ui';
+import { Select, IconButton, ImageCard } from '../../../../../../packages/ui';
 
 interface Props {
   data: any[];
   title: string;
   options: { value: string; label: string }[];
 }
-const ImageList: FC<Props> = ({ data, title, options }) => {
+const Index: FC<Props> = ({ data, title, options }) => {
   const [type, setType] = useState('1');
   return (
     <>
@@ -64,4 +64,4 @@ const ImageList: FC<Props> = ({ data, title, options }) => {
   );
 };
 
-export default ImageList;
+export default Index;

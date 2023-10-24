@@ -1,5 +1,5 @@
 import tw from 'twin.macro';
-import ImageList from '@/components/domains/home/ImageList';
+import Index from 'src/components/commons/ImageList';
 import { Icon } from 'icons';
 import { IconButton, ImageCard } from 'ui';
 interface ImageCardData {
@@ -46,13 +46,13 @@ export default function HomePage() {
           <h1 tw={'text-dp1'}>여행을 계획하시나요?</h1>
         </div>
       </div>
-      <ImageList title={'장소별'} data={imageCardData} options={[{ value: '1', label: '제주' }]} />
-      <ImageList
+      <Index title={'장소별'} data={imageCardData} options={[{ value: '1', label: '제주' }]} />
+      <Index
         title={'동행별'}
         data={imageCardData}
         options={[{ value: '1', label: '반려동물과 함께' }]}
       />
-      <ImageList
+      <Index
         title={'테마별'}
         data={imageCardData}
         options={[{ value: '1', label: '레저/스포츠' }]}
