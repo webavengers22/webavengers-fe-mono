@@ -1,14 +1,15 @@
 import { FC, useState } from 'react';
 import tw from 'twin.macro';
 import { Icon } from 'icons';
-import { Select, IconButton, ImageCard } from '../../../../../../packages/ui';
+import { Select, IconButton, ImageCard } from 'ui';
 
 interface Props {
   data: any[];
   title: string;
   options: { value: string; label: string }[];
 }
-const Index: FC<Props> = ({ data, title, options }) => {
+
+const TravelCategoryGuidList: FC<Props> = ({ data, title, options }) => {
   const [type, setType] = useState('1');
   return (
     <>
@@ -64,4 +65,4 @@ const Index: FC<Props> = ({ data, title, options }) => {
   );
 };
 
-export default Index;
+export default TravelCategoryGuidList;
