@@ -11,14 +11,15 @@
     "tsconfig": "*"
   },
   "devDependencies": {
-    "@floating-ui/react": "^0.21.1"
+    "@floating-ui/react": "^0.21.1",
+    "rc-table": "^7.35.2"
   },
   "peerDependencies": {
     "@types/node": "20.4.2",
     "@types/react": "^18.2.15",
-    "react": "^18.2.0",
     "next": "13.4.10",
-    "next-seo": "^6.1.0"
+    "next-seo": "^6.1.0",
+    "react": "^18.2.0"
   },
   "babelMacros": {
     "twin": {
