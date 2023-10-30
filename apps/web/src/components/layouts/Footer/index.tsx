@@ -28,19 +28,19 @@ export const Footer: FC = () => {
         </IconButton>
         <div css={[tw`flex gap-4 h-full items-center`]}>
           <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-2`]}>
-            <Link href={'/service/customer-support'}>고객센터</Link>
+            <Link href={'/user/help/customer-support'}>고객센터</Link>
           </Button>
           <hr css={[tw`border-Gray-300 h-1/2 border`]} />
           <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-2`]}>
-            <Link href={'/service/help-center'}>이용문의</Link>
+            <Link href={'/user/help/help-center'}>이용문의</Link>
           </Button>
           <hr css={[tw`border-Gray-300 h-1/2 border`]} />
           <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-2`]}>
-            <Link href={'/service/terms'}>이용약관</Link>
+            <Link href={'/user/help/terms'}>이용약관</Link>
           </Button>
           <hr css={[tw`border-Gray-300 h-1/2 border`]} />
           <Button css={[tw`!bg-transparent`, tw`!text-black`, tw`p-2`]}>
-            <Link href={'/service/help-center'}>개인정보 취급방침</Link>
+            <Link href={'/user/help/help-center'}>개인정보 취급방침</Link>
           </Button>
         </div>
       </section>
