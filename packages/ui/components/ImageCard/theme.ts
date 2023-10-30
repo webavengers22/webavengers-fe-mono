@@ -8,6 +8,7 @@ export const theme = {
     base: [tw`bg-cover bg-center h-64 w-full relative`, tw`rounded-lg`],
     img: [tw`opacity-0 absolute w-full h-full`],
   },
+  title: [tw`text-tit-r text-white p-4 absolute bottom-0`],
   tag: {
     base: [tw`absolute bottom-2 left-2 flex gap-1 list-none`],
     li: [

@@ -1,14 +1,14 @@
 import { FC, useState } from 'react';
 import tw from 'twin.macro';
 import { Icon } from 'icons';
-import { Select, IconButton, ImageCard } from 'ui';
+import { Select, IconButton, ImageCard } from '../../../../../../packages/ui';
 
 interface Props {
   data: any[];
   title: string;
   options: { value: string; label: string }[];
 }
-const ImageList: FC<Props> = ({ data, title, options }) => {
+const Index: FC<Props> = ({ data, title, options }) => {
   const [type, setType] = useState('1');
   return (
     <>
@@ -28,22 +28,40 @@ const ImageList: FC<Props> = ({ data, title, options }) => {
             <Icon size={24} name={'ArrowRight'} solid />
           </IconButton>
         </section>
-        <section tw={'col-span-9 flex flex-row  gap-4'}>
+        <section tw={'col-span-9 flex flex-row  gap-4 relative  '}>
+          <IconButton
+            css={[
+              tw`absolute left-0 top-1/3 z-10 text-white `,
+              tw`w-10 h-10 opacity-80 !bg-black rounded-tr-lg rounded-br-lg`,
+            ]}
+          >
+            <Icon name={'CaretLeft'} color={'transparent'} size={24} solid />
+          </IconButton>
           {data.map((card, index) => (
             <ImageCard
               css={[tw`flex-1`]}
-              date={card.date}
-              title={card.title}
+              description={{
+                date: card.date,
+                title: card.title,
+                likes: card.likes,
+                useInfo: card.useInfo,
+              }}
               imageSrc={card.imageSrc}
               tags={card.tags}
-              likes={card.likes}
-              useInfo={card.id}
             />
           ))}
+          <IconButton
+            css={[
+              tw`absolute right-0 top-1/3 text-white`,
+              tw`w-10 h-10 opacity-80 !bg-black rounded-tl-lg rounded-bl-lg`,
+            ]}
+          >
+            <Icon name={'CaretRight'} color={'transparent'} size={24} solid />
+          </IconButton>
         </section>
       </article>
     </>
   );
 };
 
-export default ImageList;
+export default Index;
