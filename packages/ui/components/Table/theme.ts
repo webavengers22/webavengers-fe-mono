@@ -13,7 +13,7 @@ export const theme = {
 
         table {
           tr {
-            ${tw`h-[60px] max-h-[60px]`}
+            ${tw`h-12 max-h-16`}
           }
           tbody {
             ${tw`text-bd1-r text-black`}
@@ -26,7 +26,7 @@ export const theme = {
     base: tw`w-full h-full`,
   },
   tableHeader: {
-    base: tw`text-left border-t border-t-Gray-500 bg-Gray-500 border-b border-b-Gray-300`,
+    base: tw`text-left border-t border-t-Gray-500 bg-Gray-200 border-b border-b-Gray-300`,
   },
   tableHeaderCell: {
     base: [tw`text-bd1-b text-black`, tw`px-1 py-0`],

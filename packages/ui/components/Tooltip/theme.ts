@@ -4,7 +4,7 @@ export const theme = {
   tooltip: {
     base: [
       tw`p-4 rounded`,
-      tw`bg-black`,
+      tw`bg-black text-white`,
       tw`border border-black`,
       tw`pointer-events-none select-none`,
       css`
