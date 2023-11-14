@@ -12,11 +12,20 @@ export const theme = {
       tw`outline-none shadow-0`,
     ],
   },
+  sizes: {
+    md: {
+      container: [tw`w-96 h-48`],
+      bodyContainer: [tw`px-3 py-3 text-sm`, tw`my-4`],
+    },
+    lg: {
+      container: [tw`w-[32rem] h-[15rem]`],
+      bodyContainer: [tw`px-4 py-4 text-lg`, tw`my-6`],
+    },
+  },
   headerContainer: [tw`flex`],
   headerTitleContainer: [tw`flex-grow`, tw`text-hd2-b`],
   closeButton: [tw`w-6 h-6 !bg-transparent text-black`],
-  bodyContainer: [tw`mt-7`, tw`text-bd1-r`],
-  bottomContainer: [tw`ml-auto mt-6 max-w-max`, tw`flex justify-between`],
+  bodyContainer: [tw`flex flex-col justify-center items-start`, tw`my-5`, tw`text-bd1-r`],
+  bottomContainer: [tw`flex justify-end items-end`, tw`mt-auto`, tw`p-2`],
   buttonContainer: [tw`ml-4`],
-  separator: [tw`border-t bg-Gray-100 mt-6`],
 };

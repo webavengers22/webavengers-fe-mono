@@ -8,88 +8,96 @@ import {
   useInteractions,
   useRole,
 } from '@floating-ui/react';
-import React, { FC, PropsWithChildren, useRef } from 'react';
+import React, { HTMLAttributes } from 'react';
 import { Icon } from 'icons';
 import { Button } from '../Button';
 import { theme } from './theme';
 import { IconButton } from '../IconButton';
+import { Size } from './types';
 
-export interface ModalProps extends PropsWithChildren {
+export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   isOpen?: boolean;
-  className?: string; // 커스텀 클래스명
-  disabledBackdrop?: boolean; // 모달 배경 클릭 이벤트 여부
-  onClose?: () => void;
+  className?: string;
+  disabledBackdrop?: boolean;
+  size?: Size;
+  onClose: () => void;
 }
 
-export const Modal: FC<ModalProps> = ({
-  children,
-  isOpen = false,
-  title,
-  onClose,
-  disabledBackdrop,
-  className,
-}) => {
-  const { context } = useFloating({
-    open: isOpen,
-    onOpenChange: onClose,
-  });
-
-  const click = useClick(context);
-  const role = useRole(context);
-  const dismiss = useDismiss(context, { outsidePressEvent: 'mousedown' });
-
-  const { getFloatingProps } = useInteractions([click, role, dismiss]);
-
-  // 취소 버튼 클릭시
-  const handleCancel = () => {
-    console.log('취소');
-    onClose?.();
-  };
-
-  // 확인 버튼 클릭시
-  const handleConfirm = () => {
-    console.log('확인');
-    onClose?.();
-  };
-
-  // 모달 배경 클릭 이벤트 여부
-  const handleBackdropClick = () => {
-    console.log('disabledBackdrop', disabledBackdrop);
-    if (!disabledBackdrop) {
-      onClose?.();
+export const ModalComponent: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
+  { children, title, isOpen, className, size = 'md', disabledBackdrop = false, onClose, ...rest },
+  ref,
+) => {
+  /** 모달 배경 클릭 이벤트 컨트롤용 (disabledBackdrop) */
+  const handleOpenChange = (open: boolean) => {
+    if (!open && disabledBackdrop) {
+      onClose();
     }
   };
 
-  const myRef = useRef(null);
+  // 모달의 내부 요소 (버튼, 헤더) 클릭시 이벤트 버블링 방지
+  const stopPropagation = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
+  // 모달 가시성 관리
+  const { context } = useFloating({
+    open: isOpen,
+    onOpenChange: handleOpenChange,
+  });
+
+  // 사용자 상호작용 관리용
+  const click = useClick(context);
+  const role = useRole(context);
+  const dismiss = useDismiss(context, { outsidePressEvent: 'mousedown' });
+  const { getFloatingProps } = useInteractions([click, role, dismiss]);
+
+  /** 모달 배경 클릭 이벤트 처리 함수 */
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    // disabledBackdrop가 true이고 onClose 함수가 존재하는 경우에만 닫기
+    if (disabledBackdrop && onClose) {
+      onClose();
+    } else if (!disabledBackdrop) {
+      stopPropagation(e);
+    }
+  };
+
+  /** 모달 닫기 버튼 핸들러 */
+  const handleCloseButton = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
     <FloatingPortal>
       {isOpen && (
-        <FloatingOverlay lockScroll css={theme.overlay}>
+        <FloatingOverlay lockScroll css={theme.overlay} onClick={handleBackdropClick}>
           <FloatingFocusManager context={context}>
             <div
-              css={[theme.container.base]}
+              css={[theme.container.base, theme.sizes[size].container]}
               {...getFloatingProps()}
-              onClick={handleBackdropClick}
               className={className}
-              ref={myRef}
+              onClick={stopPropagation}
+              ref={ref}
+              {...rest}
             >
-              {/* 헤더 영역 */}
+              {/* 헤더 */}
               <div css={theme.headerContainer}>
                 <div css={theme.headerTitleContainer}>
                   <h5>{title}</h5>
                 </div>
 
-                <IconButton onClick={onClose} css={theme.closeButton}>
+                {/* 닫기 버튼 */}
+                <IconButton onClick={handleCloseButton} css={theme.closeButton}>
                   <Icon name={'Cancel'} solid size={24} />
                 </IconButton>
               </div>
 
-              {/* 바디 영역 */}
-              <div css={[theme.bodyContainer]}>{children}</div>
+              {/* 본문 */}
+              <div css={[theme.bodyContainer, theme.sizes[size].bodyContainer]}>{children}</div>
 
-              {/* 바텀 영역 */}
+              {/* 바텀 버튼 */}
               <div css={[theme.bottomContainer]}>
                 <div css={[theme.buttonContainer]}>
                   <Button
@@ -98,7 +106,7 @@ export const Modal: FC<ModalProps> = ({
                     color="secondary"
                     size="md"
                     shape="circle"
-                    onClick={handleCancel}
+                    onClick={handleCloseButton}
                   >
                     취소
                   </Button>
@@ -110,7 +118,7 @@ export const Modal: FC<ModalProps> = ({
                     color="secondary"
                     size="md"
                     shape="circle"
-                    onClick={handleConfirm}
+                    onClick={handleCloseButton}
                   >
                     확인
                   </Button>
@@ -123,4 +131,9 @@ export const Modal: FC<ModalProps> = ({
     </FloatingPortal>
   );
 };
+
+export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(ModalComponent);
+
 Modal.displayName = 'Modal';
+
+export default Modal;
