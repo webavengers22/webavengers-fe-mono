@@ -1,5 +1,5 @@
-import { Modal, ModalProps } from './../../../packages/ui/components/Modal/index';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Modal, ModalProps } from 'ui';
 
 const meta: Meta<ModalProps> = {
   title: 'component/Modal',

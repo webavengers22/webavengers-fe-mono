@@ -15,11 +15,13 @@ export const theme = {
   sizes: {
     md: {
       container: [tw`w-96 h-48`],
-      bodyContainer: [tw`px-3 py-3 text-sm`, tw`my-4`],
+      bodyContainer: [tw`px-2 py-2 text-sm`, tw`my-4`],
+      bottomContainer: [tw`flex justify-end items-end`, tw`mt-auto`, tw`p-2`], // md 크기에 맞는 bottomContainer 스타일
     },
     lg: {
       container: [tw`w-[32rem] h-[15rem]`],
       bodyContainer: [tw`px-4 py-4 text-lg`, tw`my-6`],
+      bottomContainer: [tw`flex justify-end items-end`, tw`mt-auto`, tw`p-4`], // lg 크기에 맞는 bottomContainer 스타일
     },
   },
   headerContainer: [tw`flex`],
