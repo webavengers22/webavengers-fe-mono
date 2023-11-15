@@ -22,11 +22,22 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   disabledBackdrop?: boolean;
   size?: Size;
   onClose: () => void;
+  onConfirm?: () => void;
 }
 
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   (
-    { children, title, isOpen, className, size = 'md', disabledBackdrop = false, onClose, ...rest },
+    {
+      children,
+      title,
+      isOpen,
+      className,
+      size = 'md',
+      disabledBackdrop = false,
+      onClose,
+      onConfirm = () => {},
+      ...rest
+    },
     ref,
   ) => {
     // 모달 배경 클릭 이벤트 컨트롤
@@ -66,6 +77,11 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       if (onClose) {
         onClose();
       }
+    };
+
+    // 확인 버튼 핸들러
+    const handleConfirmButton = () => {
+      onConfirm();
     };
 
     return (
@@ -113,7 +129,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
                       color="secondary"
                       size="md"
                       shape="circle"
-                      onClick={handleCloseButton}
+                      onClick={handleConfirmButton}
                     >
                       확인
                     </Button>
