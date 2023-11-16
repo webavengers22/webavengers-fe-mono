@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, forwardRef } from 'react';
 import { Icon } from 'icons';
 import { Button } from '../Button';
 import { theme } from './theme';
