@@ -5,6 +5,9 @@ node_modules
 .pnp
 .pnp.js
 yarn.lock
+.yarn.lock
+package-lock.json
+.package-lock.json
 
 # testing
 coverage
