@@ -8,18 +8,18 @@ export default function LoginPage() {
   const closeModal = () => setIsOpen(false);
 
   return (
-      <>
-        <article>
-          <div>로그인</div>
-          <button onClick={openModal}>모달열기</button>
-          <Modal
-              title={'title'}
-              children={'body'}
-              isOpen={isOpen}
-              onClose={closeModal}
-              disabledBackdrop={true}
-          ></Modal>
-        </article>
-      </>
+    <>
+      <article>
+        <div>로그인</div>
+        <button onClick={openModal}>모달열기</button>
+        <Modal
+          title={'title'}
+          children={'body'}
+          isOpen={isOpen}
+          onClose={closeModal}
+          disabledBackdrop={true}
+        ></Modal>
+      </article>
+    </>
   );
 }
