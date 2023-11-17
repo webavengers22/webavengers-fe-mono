@@ -26,5 +26,6 @@ export const Primary: StoryObj<ModalProps> = {
     disabledBackdrop: false,
     // onClose: () => console.log('Modal closed'),
     onClose: () => {},
+    onConfirm: () => {},
   },
 };
