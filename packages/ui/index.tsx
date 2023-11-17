@@ -9,3 +9,4 @@ export * from './components/Avatar';
 export * from './components/Tooltip';
 export * from './components/Table';
 export * from './components/Pagination';
+export * from './components/Modal';
