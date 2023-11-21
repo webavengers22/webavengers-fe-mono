@@ -74,7 +74,9 @@ export const Header: FC = () => {
           </ul>
         </nav>
         <span css={[tw`w-[6rem]`]}>
-          <LogoRectIcon color={'black'} css={[tw`w-full h-full`]} />
+          <Link href={'/home'}>
+            <LogoRectIcon color={'black'} css={[tw`w-full h-full`]} />
+          </Link>
         </span>
         <div css={[tw`flex flex-row items-center gap-4`]}>
           {userInfo.user === 0 ? (

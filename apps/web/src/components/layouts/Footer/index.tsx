@@ -12,7 +12,7 @@ export const Footer: FC = () => {
       css={[
         tw`relative w-full h-20 `,
         tw`flex items-center justify-center`,
-        tw`text-black bg-Gray-200`,
+        tw`text-black bg-Gray-200 shrink-0`,
       ]}
     >
       <section
